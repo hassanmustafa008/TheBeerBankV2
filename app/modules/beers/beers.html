@@ -1,0 +1,49 @@
+<style>
+    .parent {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .child {
+        flex: 1 0 25%;
+        margin: 5px;
+        height: 100px;
+        text-align: center;
+    }
+
+    img {
+        width: 40px;
+        height: 60px;
+    }
+
+    .table tr td {
+        border-top: 0 !important;
+    }
+</style>
+<div class="parent">
+    <div class="child" ng-repeat="beer in $ctrl.beersList track by $index" ng-if="!beer.display"
+         ng-click="$ctrl.showBeer(beer)">
+        <table class="table" style="text-align: center;">
+            <tbody>
+            <tr>
+                <td>
+                    <img src="{{::beer.image_url}}">
+                </td>
+                <td>
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{::beer.name}}
+                    {{::beer.tagline}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<div><img src="{{::beer.image_url}}"></div>-->
+        <!--<div><i class="glyphicon glyphicon-star-empty"></i></div>-->
+        <!--<div>{{::beer.name}}</div>-->
+        <!--<div>{{::beer.tagline}}</div>-->
+    </div>
+</div>

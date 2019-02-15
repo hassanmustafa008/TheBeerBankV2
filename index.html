@@ -1,0 +1,54 @@
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="scripts/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="scripts/DataTables/datatables.css">
+    <style>
+        .main {
+            background-color: #6c757d;
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+
+        ul li {
+            display: inline;
+            padding: 10px;
+        }
+        /*ul li a{*/
+            /*color: #fefefe;*/
+        /*}*/
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<base href="/">
+<div class="container">
+    <div class="main" ng-controller="AppCtrl">
+        <h4>The Beer Bank</h4>
+        <p>Find your favorite beer here</p>
+        <input type="text" placeholder="Search for beer name" ng-model="searchText" ng-change="search()">
+        <ul class="pull-right">
+            <li><a ng-href="#!home">HOME</a></li>
+            <li><a ng-href="#!favorite">FAVORITE</a></li>
+        </ul>
+    </div>
+    <div ng-view></div>
+</div>
+<script type="text/javascript" src="scripts/DataTables/jQuery-3.3.1/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="scripts/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="scripts/angular-1.7.5/angular.js"></script>
+<script type="text/javascript" src="scripts/angular-1.7.5/angular-route.js"></script>
+<script type="text/javascript" src="scripts/ui-directives/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<!--common-->
+<script type="text/javascript" src="app/common/globalSvc.js"></script>
+<script type="text/javascript" src="app/common/utils.js"></script>
+<script type="text/javascript" src="app/common/sharedDataSvc.js"></script>
+<!--directives-->
+<script type="text/javascript" src="app/directives/modal/modal.js"></script>
+<!--components-->
+<script type="text/javascript" src="app/modules/beers/beers.js"></script>
+<script type="text/javascript" src="app/modules/beer/beer.js"></script>
+</body>
+</html>
